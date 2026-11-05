@@ -10,9 +10,10 @@
 # Выведите строку вида: Иван, 25 лет, Москва.
 
 def task_1_1():
-    # TODO: реализовать
-    pass
-
+    name = str(input("Введите имя: "))
+    age = int(input("Введите возраст: "))
+    city = str(input("Введите город: "))
+    print(f"{name}, {age} лет, {city}.")
 
 # ============================================================
 # Задача 1.2. Сумма двух чисел
@@ -21,8 +22,9 @@ def task_1_1():
 # разность и произведение.
 
 def task_1_2():
-    # TODO: реализовать
-    pass
+    first_number = int(input("Введите первое число: "))
+    second_number = int(input("Введите второе число: "))
+    print(f"Сумма: {first_number + second_number}")
 
 
 # ============================================================
@@ -31,8 +33,9 @@ def task_1_2():
 # Запросите строку и выведите её длину и первый символ.
 
 def task_1_3():
-    # TODO: реализовать
-    pass
+    string = str(input("Введите строку: "))
+    print(f"Длина строки: {len(string)}")
+    print(f"Первый символ: {string[0]}")
 
 
 # ============================================================
@@ -43,9 +46,9 @@ def task_1_3():
 # и сравнение).
 
 def task_1_4():
-    # TODO: реализовать
-    pass
-
+    num = int(input("Введите число: "))
+    print(num > 0)
+    
 
 # ============================================================
 # Задача 2.1. Площадь круга
@@ -60,9 +63,12 @@ def task_1_4():
 #
 # Подсказка: используйте math.pi и f-строки.
 
-def task_2_1(radius: float) -> tuple:
-    # TODO: реализовать
-    pass
+def task_2_1(radius: float) -> str:
+    import math
+
+    area = math.pi * radius**2
+    circumference = 2 * math.pi * radius
+    return f"S = {area:.2f}, C = {circumference:.2f}"
 
 
 # ============================================================
@@ -76,8 +82,9 @@ def task_2_1(radius: float) -> tuple:
 #   Out: a = 10, b = 5
 
 def task_2_2(a, b):
-    # TODO: реализовать
-    pass
+
+    a, b = b, a
+    print(f"a = {a}, b = {b}")
 
 
 # ============================================================
@@ -95,8 +102,9 @@ def task_2_2(a, b):
 #   Используйте // и %. Для ведущего нуля: f"{h:02d}:{m:02d}".
 
 def task_2_3(minutes: int) -> str:
-    # TODO: реализовать
-    pass
+    hours = minutes // 60
+    minutes = minutes % 60
+    return f"{hours:02d}:{minutes:02d}"
 
 
 # ============================================================
@@ -106,5 +114,10 @@ def task_2_3(minutes: int) -> str:
 # 2.3: h = minutes // 60; m = minutes % 60; f"{h:02d}:{m:02d}"
 
 if __name__ == "__main__":
-    print("p4_base: заполните TODO в функциях.")
-    print("Задачи: 1.1–1.4, 2.1–2.3")
+    task_1_1()
+    task_1_2()
+    task_1_3()
+    task_1_4()
+    print(task_2_1(3.0))
+    task_2_2(5, 10)
+    print(task_2_3(135))
